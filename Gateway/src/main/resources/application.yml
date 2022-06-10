@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: I_CHATBOT
+          uri: lb://I_CHATBOT
+          predicates:
+            - Path=/api/**
+        - id: I_CHATBOT
+          uri: lb://I_CHATBOT
+          predicates:
+            - Path=/login
+        - id: WEB_CHATBOT
+          uri: lb://WEB_CHATBOT
+          predicates:
+            - Path=/web/**
+        - id: WEB_CHATBOT
+          uri: lb://WEB_CHATBOT
+          predicates:
+            - Path=/
